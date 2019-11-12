@@ -9,6 +9,8 @@ import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { FeedComponent } from './help-forum/feed/feed.component';
+import { SearchComponent } from './help-forum/search/search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HelpForumComponent,
     PreparationTipsComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    FeedComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
