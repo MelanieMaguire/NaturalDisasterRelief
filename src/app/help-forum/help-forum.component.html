@@ -8,10 +8,11 @@
             <app-help-forum-feed></app-help-forum-feed>
         </div>
         <div class="col-md-6">
-            <button class="btn btn-primary">Request Help</button>
-            <button class="btn btn-primary">Provide Help</button>
+            <button class="btn btn-primary" (click)="clickRequest()">Request Help</button>
+            <button class="btn btn-primary" (click)="clickProvide()">Provide Help</button>
             <div class="row">
-                <!-- filter or post component-->
+                <app-help-forum-request-help *ngIf="loadRequest"></app-help-forum-request-help>
+                <app-help-forum-provide-help *ngIf="loadProvide"></app-help-forum-provide-help>
             </div>
         </div>
     </div>

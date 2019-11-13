@@ -13,6 +13,7 @@ import { FeedComponent } from './help-forum/feed/feed.component';
 import { SearchComponent } from './help-forum/search/search.component';
 import { RequestHelpComponent } from './help-forum/request-help/request-help.component';
 import { ProvideHelpComponent } from './help-forum/provide-help/provide-help.component';
+import { FeedPostComponent } from './help-forum/feed-post/feed-post.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProvideHelpComponent } from './help-forum/provide-help/provide-help.com
     FeedComponent,
     SearchComponent,
     RequestHelpComponent,
-    ProvideHelpComponent
+    ProvideHelpComponent,
+    FeedPostComponent
   ],
   imports: [
     BrowserModule,
