@@ -1,3 +1,5 @@
+import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
+import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,6 +18,10 @@ const routes: Routes = [
   { path: 'preparation_tips', component: PreparationTipsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign_up', component: SignUpComponent },
+ // { path: 'new_entry', component: CreateEntryComponent},
+  { path: 'new_entry', component: CreateEntryComponent},
+  { path: 'add_entry', redirectTo: '/new_entry'},
+  { path: 'back_to_search', redirectTo: '/mia'}
 ];
 
 @NgModule({
