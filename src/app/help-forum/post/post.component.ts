@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-help-forum-feed-post',
+  selector: 'app-help-forum-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
