@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  posts = [];
+  private posts = [];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addPost(){ //from https://stackoverflow.com/questions/52544636/how-to-create-existing-component-multiple-times-on-button-click-angular
+    this.posts = [ ...this.posts, this.posts.length]
   }
 
 }
