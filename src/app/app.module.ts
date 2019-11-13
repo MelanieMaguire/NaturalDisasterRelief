@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FeedComponent } from './help-forum/feed/feed.component';
 import { SearchComponent } from './help-forum/search/search.component';
+import { RequestHelpComponent } from './help-forum/request-help/request-help.component';
+import { ProvideHelpComponent } from './help-forum/provide-help/provide-help.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SearchComponent } from './help-forum/search/search.component';
     LoginComponent,
     SignUpComponent,
     FeedComponent,
-    SearchComponent
+    SearchComponent,
+    RequestHelpComponent,
+    ProvideHelpComponent
   ],
   imports: [
     BrowserModule,
