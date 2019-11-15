@@ -1,1 +1,5 @@
 <p>provide-help works!</p>
+<li *ngFor="let item of tags">
+    <input type="checkbox" [(ngModel)]="item">{{item}}
+</li>
+<button type="submit" class="btn btn-success" (click)="onFilter()">Filter</button>

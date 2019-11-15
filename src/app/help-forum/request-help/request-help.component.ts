@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
  
 import { Post } from '../post';
 import { HelpForumService } from '../help-forum.service';
@@ -8,7 +7,6 @@ import { HelpForumService } from '../help-forum.service';
   selector: 'app-help-forum-request-help',
   templateUrl: './request-help.component.html',
   styleUrls: ['./request-help.component.css']
-  
 })
 export class RequestHelpComponent implements OnInit {
 

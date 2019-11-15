@@ -5,4 +5,5 @@ export class Post { //followed https://grokonez.com/frontend/angular/angular-8/a
     title: string;
     body: string;
     comments: string[];
+    tags: string[];
 }

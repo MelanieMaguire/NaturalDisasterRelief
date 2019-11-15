@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProvideHelpComponent implements OnInit {
 
+  tags: string[]
+
   constructor() { }
 
   ngOnInit() {
+    this.tags= ["location","tag", "title"];
   }
 
 }

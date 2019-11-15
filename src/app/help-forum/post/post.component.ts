@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
       .catch(err => console.log(err));
   }
  
-  deleteCustomer() {
+  deletePost() {
     this.helpForumService
       .deletePost(this.post.key)
       .catch(err => console.log(err));

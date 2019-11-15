@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HelpForumService } from '../help-forum.service';
 import { map } from 'rxjs/operators';
+import { SearchService } from '../search.service';
 
 
 @Component({
@@ -11,11 +12,15 @@ import { map } from 'rxjs/operators';
 export class FeedComponent implements OnInit {
 
   posts: any;
+  filteredPosts: any;
 
-  constructor(private helpForumService: HelpForumService) { }
+  constructor(private helpForumService: HelpForumService,
+    private searchService: SearchService) {
+  }
 
   ngOnInit() {
     this.getPostsList();
+    this.getFilterList();
   }
 
   getPostsList() {
@@ -27,7 +32,22 @@ export class FeedComponent implements OnInit {
       )
     ).subscribe(posts => {
       this.posts = posts;
+      this.filteredPosts = posts;
     });
+  }
+
+  getFilterList(){
+    if(this.searchService.getSearchString() != ""){
+      this.searchService.getFilterList().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ key: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(posts => {
+        this.filteredPosts = posts;
+      });
+    }
   }
  
   deletePosts() {
