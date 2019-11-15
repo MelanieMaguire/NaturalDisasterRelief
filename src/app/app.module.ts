@@ -22,6 +22,8 @@ import {FormsModule} from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
+import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
+import { LoginSuccessComponent } from './login/login-success/login-success.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { CreateEntryComponent } from './entry/create-entry/create-entry.componen
     PostComponent,
     EntryDetailsComponent,
     EntryListComponent,
-    CreateEntryComponent
+    CreateEntryComponent,
+    AccoutCreatedComponent,
+    LoginSuccessComponent
   ],
   imports: [
     BrowserModule,
