@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
+import { FindShelterComponent } from './find-shelter/find-shelter.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FeedComponent } from './help-forum/feed/feed.component';
@@ -30,6 +31,7 @@ import { CreateEntryComponent } from './entry/create-entry/create-entry.componen
     MiaComponent,
     HelpForumComponent,
     PreparationTipsComponent,
+    FindShelterComponent,
     LoginComponent,
     SignUpComponent,
     FeedComponent,
