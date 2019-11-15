@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+ 
+import { Post } from '../post';
+import { HelpForumService } from '../help-forum.service';
 
 @Component({
   selector: 'app-help-forum-request-help',
@@ -7,12 +11,27 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   
 })
 export class RequestHelpComponent implements OnInit {
-  constructor() { }
+
+  post: Post = new Post();
+  submitted = false;
+
+  constructor(private helpForumService: HelpForumService) { }
 
   ngOnInit() {
   }
 
-  postHelp(){
-
+  newPost(): void {
+    this.submitted = false;
+    this.post = new Post();
+  }
+ 
+  save() {
+    this.helpForumService.createPost(this.post);
+    this.post = new Post();
+  }
+ 
+  onSubmit() {
+    this.submitted = true;
+    this.save();
   }
 }

@@ -1,5 +1,8 @@
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
+import { RequestHelpComponent } from './help-forum/request-help/request-help.component';
+import { FeedComponent } from './help-forum/feed/feed.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

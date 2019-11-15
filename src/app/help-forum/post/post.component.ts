@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { HelpForumService } from '../help-forum.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-help-forum-post',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  @Input() post: Post;
+
+  constructor(private helpForumService: HelpForumService) { }
 
   ngOnInit() {
+  }
+
+  updateActive(isActive: boolean) {
+    this.helpForumService
+      .updatePost(this.post.key, { active: isActive })
+      .catch(err => console.log(err));
+  }
+ 
+  deleteCustomer() {
+    this.helpForumService
+      .deletePost(this.post.key)
+      .catch(err => console.log(err));
   }
 
 }

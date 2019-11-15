@@ -1,6 +1,11 @@
 <p>request-help works!</p>
-<input class="form-control" type="text" placeholder="Title">
-<textarea rows="10" columns="10">
-    Enter the post information.
-</textarea>
-<button (click)="postHelp()" >Post Help</button>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input type="text" class="form-control" id="title" required [(ngModel)]="post.title" name="title">
+    </div>
+
+    <div class="form-group">
+        <textarea id="body" required [(ngModel)]="post.body" name="body"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+</form>

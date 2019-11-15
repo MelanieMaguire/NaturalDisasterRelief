@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HelpForumService } from '../help-forum.service';
+import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-help-forum-feed',
@@ -7,15 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  private posts = [];
+  posts: any;
 
-  constructor() { }
+  constructor(private helpForumService: HelpForumService) { }
 
   ngOnInit() {
+    this.getPostsList();
   }
 
-  addPost(){ //from https://stackoverflow.com/questions/52544636/how-to-create-existing-component-multiple-times-on-button-click-angular
-    this.posts = [ ...this.posts, this.posts.length]
+  getPostsList() {
+    this.helpForumService.getPostsList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(posts => {
+      this.posts = posts;
+    });
+  }
+ 
+  deletePosts() {
+    this.helpForumService.deleteAll().catch(err => console.log(err));
   }
 
 }

@@ -1,3 +1,5 @@
 <p>feed works!</p>
-<app-help-forum-feed-post *ngFor="let post of posts">
-</app-help-forum-feed-post>
+
+<div *ngFor="let post of posts">
+    <app-help-forum-post [post]='post'></app-help-forum-post>
+</div>
