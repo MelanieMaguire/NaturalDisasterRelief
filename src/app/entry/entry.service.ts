@@ -21,6 +21,7 @@ export class EntryService {
   getEntryList(): AngularFireList<Entry> {
     return this.entryRef;
   }
+
 }
 
 /* I followed an example from
