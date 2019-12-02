@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -54,8 +56,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule // for the database
+    AngularFireDatabaseModule,
+    NoopAnimationsModule // for the database
   ],
   providers: [],
   bootstrap: [AppComponent]
