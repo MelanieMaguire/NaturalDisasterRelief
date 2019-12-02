@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Post } from './post'
 
@@ -14,6 +14,8 @@ export class HelpForumService {
         this.postsRef = db.list(this.dbPath 
         );//edit to order by timestamp
     }
+
+    @Output() public postClicked: EventEmitter<any> = new EventEmitter();
 
     createPost(post: Post): void {
         this.postsRef.push(post);

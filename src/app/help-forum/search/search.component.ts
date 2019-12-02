@@ -23,8 +23,7 @@ export class SearchComponent implements OnInit {
     }
     else{
       this.testSearch = this.searchText;
-      this.searchService.searchChanged.emit(
-        {data: this.searchText});
+      this.searchService.searchChanged.emit(this.searchText);
     }
   }
 

@@ -33,6 +33,7 @@ export class PostComponent implements OnInit {
 
   postClicked(){
     this.testy = "Clicked!"
+    this.helpForumService.postClicked.emit(this.post);
   }
 
 }

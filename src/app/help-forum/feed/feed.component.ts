@@ -18,6 +18,7 @@ export class FeedComponent implements OnInit {
   constructor(private helpForumService: HelpForumService,
     private searchService: SearchService) {
       this.searchService.searchChanged.subscribe((data: string) => {
+        console.log("SearchData", data)
         this.searchText = data;
       });
   }

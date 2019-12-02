@@ -1,5 +1,12 @@
 <h4>Help Forum</h4>
-<div class="container">
+<!--
+    post visuals
+    aka
+    the post
+    flag button-> brings up flag reason and flag button
+-->
+<app-help-forum-post [post]='post' *ngIf="postClicked"></app-help-forum-post>
+<div class="container" *ngIf="!postClicked">
     <div class="row">
         <app-help-forum-search></app-help-forum-search>
     </div>
