@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
@@ -22,17 +23,23 @@ import {FormsModule} from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
+<<<<<<< HEAD
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './carousel/carousel.component';
+=======
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
+>>>>>>> 7e25ee957811e517a0d3ffb6ac0357db05a35860
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    WeatherAlertsComponent,
     MiaComponent,
     HelpForumComponent,
     PreparationTipsComponent,
@@ -47,12 +54,17 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     EntryDetailsComponent,
     EntryListComponent,
     CreateEntryComponent,
+<<<<<<< HEAD
+    CarouselComponent
+=======
     AccoutCreatedComponent,
     LoginSuccessComponent
+>>>>>>> 7e25ee957811e517a0d3ffb6ac0357db05a35860
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule // for the database
