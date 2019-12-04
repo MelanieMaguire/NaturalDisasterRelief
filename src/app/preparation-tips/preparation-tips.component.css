@@ -1,0 +1,43 @@
+
+
+.info_box {
+  display: flex;
+  flex-direction: row;
+  max-width: 120em;
+  height: 30em;
+
+  overflow: hidden;
+  border-radius:1em;
+  background-color: lightgrey;
+
+  ul {
+     list-style-position: inside;
+  }
+
+}
+
+
+.info_img {
+  display:flex;
+
+  width: 40%;
+  height: auto;
+
+  overflow:hidden;
+}
+img{
+
+}
+
+.info_text {
+  padding: 1em;
+  width: 66.66%;
+
+}
+h1 {
+  text-align:center;
+}
+p {
+  height:100%;
+
+}
