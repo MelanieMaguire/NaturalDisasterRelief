@@ -10,4 +10,5 @@ export class Entry {
   eyecolor: string;
   location: string;
   contact: string;
+  picture: string;
 }

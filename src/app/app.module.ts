@@ -25,13 +25,9 @@ import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
-import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-
-
-
 
 @NgModule({
   declarations: [
@@ -52,10 +48,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     EntryDetailsComponent,
     EntryListComponent,
     CreateEntryComponent,
-
     AccoutCreatedComponent,
-    LoginSuccessComponent
-
+    LoginSuccessComponent,
   ],
   imports: [
     BrowserModule,
