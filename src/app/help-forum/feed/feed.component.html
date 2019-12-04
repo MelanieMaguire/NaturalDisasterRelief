@@ -1,4 +1,4 @@
 <p></p> {{searchText}}
-<div *ngFor="let post of filteredPosts">
+<div *ngFor="let post of filteredPosts | postFilter:searchText">
     <app-help-forum-post [post]='post'></app-help-forum-post>
 </div>
