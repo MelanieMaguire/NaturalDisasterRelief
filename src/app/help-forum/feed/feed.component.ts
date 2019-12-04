@@ -24,7 +24,7 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchText = "Starting";
+    this.searchText = "";
     this.getPostsList();
     this.getFilterList();
   }

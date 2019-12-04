@@ -28,7 +28,7 @@ import { LoginSuccessComponent } from './login/login-success/login-success.compo
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { PostFilterPipe } from './help-forum/post-filter.pipe'
 
 
 @NgModule({
@@ -50,7 +50,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     EntryListComponent,
     CreateEntryComponent,
     AccoutCreatedComponent,
-    LoginSuccessComponent
+    LoginSuccessComponent,
+    PostFilterPipe
   ],
   imports: [
     BrowserModule,

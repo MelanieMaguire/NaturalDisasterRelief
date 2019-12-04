@@ -18,13 +18,8 @@ export class SearchComponent implements OnInit {
   }
 
   search(){
-    if(this.searchText.length < 2 || this.searchText.trim().length < 2){ //if text is whitespace or is single char
-      this.testSearch = "Not enough text";
-    }
-    else{
-      this.testSearch = this.searchText;
+    this.testSearch = this.searchText;
       this.searchService.searchChanged.emit(this.searchText);
-    }
   }
 
 }
