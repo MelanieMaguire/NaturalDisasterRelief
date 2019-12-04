@@ -5,7 +5,16 @@
     the post
     flag button-> brings up flag reason and flag button
 -->
-<app-help-forum-post [post]='post' *ngIf="postClicked"></app-help-forum-post>
+<div class="container" *ngIf="postClicked">
+    <app-help-forum-post [post]='post'></app-help-forum-post>
+    <button class="btn btn-primary" (click)="FlagPost()">Flag</button>
+    <div *ngIf="postFlagged">
+        <div class="form-group">
+            <textarea id="body" required [(ngModel)]="reasonText" name="reason" placeholder="Reason for flagging post"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="SubmitComplaint()">Submit</button>
+    </div>
+</div>
 <div class="container" *ngIf="!postClicked">
     <div class="row">
         <app-help-forum-search></app-help-forum-search>

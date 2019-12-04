@@ -13,6 +13,7 @@ export class HelpForumComponent implements OnInit {
   private loadRequest=false;
   post: Post;
   postClicked: boolean;
+  postFlagged: boolean;
 
 
   constructor(private helpForumService: HelpForumService) {
@@ -24,6 +25,15 @@ export class HelpForumComponent implements OnInit {
 
   ngOnInit() {
     this.postClicked = false;
+    this.postFlagged = false;
+  }
+
+  flagPost(){
+
+  }
+
+  submitComplaint(){
+    
   }
 
   clickRequest() {
