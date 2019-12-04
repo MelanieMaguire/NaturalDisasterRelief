@@ -17,6 +17,7 @@ export class MiaComponent  {
   eyecolor = '';
   location = '';
   contact = '';
+  picture = '';
   entry: Observable<any[]>;
 
 
@@ -35,6 +36,7 @@ export class MiaComponent  {
     this.db.list('entry').push({eyecolor: this.eyecolor});
     this.db.list('entry').push({location: this.location});
     this.db.list('entry').push({contact: this.contact});
+    this.db.list('entry').push({picture: this.picture});
 
     // vv this resets the fields to holding no information
     this.fullname = '';
@@ -46,6 +48,7 @@ export class MiaComponent  {
     this.eyecolor = '';
     this.location = '';
     this.contact = '';
+    this.picture = '';
   }
 
 
