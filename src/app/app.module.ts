@@ -23,17 +23,15 @@ import {FormsModule} from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
-<<<<<<< HEAD
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselComponent } from './carousel/carousel.component';
-=======
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
->>>>>>> 7e25ee957811e517a0d3ffb6ac0357db05a35860
+
 
 @NgModule({
   declarations: [
@@ -54,12 +52,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     EntryDetailsComponent,
     EntryListComponent,
     CreateEntryComponent,
-<<<<<<< HEAD
-    CarouselComponent
-=======
+
     AccoutCreatedComponent,
     LoginSuccessComponent
->>>>>>> 7e25ee957811e517a0d3ffb6ac0357db05a35860
+
   ],
   imports: [
     BrowserModule,
