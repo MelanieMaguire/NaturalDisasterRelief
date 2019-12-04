@@ -6,14 +6,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyB3eTbWFS2izVhbwtd2XouY9DNGCRyt63o",
-    authDomain: "natural-disaster-relief-app.firebaseapp.com",
-    databaseURL: "https://natural-disaster-relief-app.firebaseio.com",
-    projectId: "natural-disaster-relief-app",
-    storageBucket: "natural-disaster-relief-app.appspot.com",
-    messagingSenderId: "1033920346320",
-    appId: "1:1033920346320:web:50fa90182d8ce8b57bc6d5",
-    measurementId: "G-5CCTDH5DH7"
+    apiKey: 'AIzaSyB3eTbWFS2izVhbwtd2XouY9DNGCRyt63o',
+    authDomain: 'natural-disaster-relief-app.firebaseapp.com',
+    databaseURL: 'https://natural-disaster-relief-app.firebaseio.com',
+    projectId: 'natural-disaster-relief-app',
+    storageBucket: 'natural-disaster-relief-app.appspot.com',
+    messagingSenderId: '1033920346320',
+    appId: '1:1033920346320:web:50fa90182d8ce8b57bc6d5',
+    measurementId: 'G-5CCTDH5DH7'
   }
 };
 

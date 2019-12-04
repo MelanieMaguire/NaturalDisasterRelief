@@ -24,7 +24,7 @@ import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
@@ -55,7 +55,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule // for the database
+    AngularFireDatabaseModule, // for the database
   ],
   providers: [],
   bootstrap: [AppComponent]
