@@ -1,1 +1,19 @@
-<p>help-forum works!</p>
+<h4>Help Forum</h4>
+<div class="container">
+    <div class="row">
+        <app-help-forum-search></app-help-forum-search>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <app-help-forum-feed></app-help-forum-feed>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-primary" (click)="clickRequest()">Request Help</button>
+            <button class="btn btn-primary" (click)="clickProvide()">Provide Help</button>
+            <div class="row">
+                <app-help-forum-request-help *ngIf="loadRequest"></app-help-forum-request-help>
+                <app-help-forum-provide-help *ngIf="loadProvide"></app-help-forum-provide-help>
+            </div>
+        </div>
+    </div>
+</div>

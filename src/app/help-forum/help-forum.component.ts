@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpForumComponent implements OnInit {
 
-  constructor() { }
+  private loadProvide=false;
+  private loadRequest=false;
+
+  constructor() {
+   }
 
   ngOnInit() {
+  }
+
+  clickRequest() {
+    this.loadRequest=true;
+    this.loadProvide=false;
+  }
+
+  clickProvide(){
+    this.loadRequest=false;
+    this.loadProvide=true;
   }
 
 }
