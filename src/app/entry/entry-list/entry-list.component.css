@@ -2,8 +2,9 @@ body{
   padding: 15px 25px 5px;
 }
 
-app-entry-details {
+.flex-container {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -1,5 +1,7 @@
 <body>
-<div *ngFor="let entry of entries" style="width: 500px;">
+<div class="flex-container">
+<div *ngFor="let entry of entries" style="width: 400px;">
   <app-entry-details [entry]='entry'></app-entry-details>
+</div>
 </div>
 </body>
