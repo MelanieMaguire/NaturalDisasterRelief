@@ -5,6 +5,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
@@ -23,18 +24,24 @@ import {FormsModule} from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+<<<<<<< HEAD
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PostFilterPipe } from './help-forum/post-filter.pipe';
 
+=======
+>>>>>>> f573db8e6d3ad344ca39d503f72aa65b1e701c13
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    WeatherAlertsComponent,
     MiaComponent,
     HelpForumComponent,
     PreparationTipsComponent,
@@ -49,13 +56,20 @@ import { PostFilterPipe } from './help-forum/post-filter.pipe';
     EntryDetailsComponent,
     EntryListComponent,
     CreateEntryComponent,
+
     AccoutCreatedComponent,
+<<<<<<< HEAD
     LoginSuccessComponent,
     PostFilterPipe
+=======
+    LoginSuccessComponent
+
+>>>>>>> f573db8e6d3ad344ca39d503f72aa65b1e701c13
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     FormsModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
