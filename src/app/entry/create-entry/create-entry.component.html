@@ -4,10 +4,16 @@
   <div class="form-inline">
     <label for="entrytype">Entry Type:&nbsp;</label>
     <select class="form-control" id = "entrytype"
-            required [(ngModel)]="entry.entrytype" name="entrytype">
+             [(ngModel)]="entry.entrytype" name="entrytype" required>
       <option>Missing</option>
       <option>Found</option>
     </select>
+  </div>
+  <br>
+  <div class="form-inline">
+    <label for="date">Date Missing/Found(MM/DD/YY): </label>
+    <input type="text" class="form-control" id="date"
+            [(ngModel)]="entry.date" name="date" required>
   </div>
   <br>
   <div class="form-inline">
@@ -128,17 +134,23 @@
   <div class="form-group">
     <label for="location">Location(City,State):</label>
     <input type="text" class="form-control" id = "location"
-    required [(ngModel)]="entry.location" name="location">
+     [(ngModel)]="entry.location" name="location" required>
   </div>
   <div class="form-group">
     <label for="contact">Contact Info: </label>
     <input type="text" class="form-control" id = "contact"
-    required [(ngModel)]="entry.contact" name="contact">
+     [(ngModel)]="entry.contact" name="contact" required>
   </div>
   <div class="form-group">
       <label for="picture">Link to recent picture: </label>
       <input type="text" class="form-control" id = "picture"
       required [(ngModel)]="entry.picture" name="picture">
+  </div>
+
+  <div class="form-group">
+    <label for="contact">Additional Information: </label>
+    <input type="text" class="form-control" id = "info"
+           [(ngModel)]="entry.info" name="info" required>
   </div>
   <br>
   <div class="btn-group">
