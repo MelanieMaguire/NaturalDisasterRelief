@@ -28,4 +28,3 @@ export class EntryService {
 https://grokonez.com/frontend/angular/angular-8/angular-8-firebase-tutorial-crud-operations-angular-fire-example
 to help me figure out how to create a class for user entries that included all required data and how
  to do all the necessary operations (Create/Delete/Update) */
-
