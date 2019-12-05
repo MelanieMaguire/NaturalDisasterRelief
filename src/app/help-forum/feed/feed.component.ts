@@ -11,6 +11,7 @@ import { SearchService } from '../search.service';
 })
 export class FeedComponent implements OnInit {
 
+  filterFlag: number;
   posts: any;
   filteredPosts: any;
   searchText: string;
@@ -18,14 +19,17 @@ export class FeedComponent implements OnInit {
   constructor(private helpForumService: HelpForumService,
     private searchService: SearchService) {
       this.searchService.searchChanged.subscribe((data: string) => {
-        console.log("SearchData", data)
         this.searchText = data;
+      });
+      this.searchService.getFilterFlag.subscribe((data: number) => {
+        this.filterFlag = data;
       });
   }
 
   ngOnInit() {
     this.getPostsList();
     this.getFilterList();
+    this.filterFlag = 1;
   }
 
   getPostsList() {

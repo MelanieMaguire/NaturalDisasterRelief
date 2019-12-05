@@ -8,8 +8,6 @@ import { Post } from './post';
 export class SearchService {
     private dbPath = '/help-forum';
 
-    searchText: string;
-    searching: boolean=false;
     filteredRef: AngularFireList<Post> = null;
 
     constructor(private db: AngularFireDatabase) {
@@ -18,6 +16,7 @@ export class SearchService {
 
     //https://stackoverflow.com/questions/49008913/invoke-a-function-in-a-sibling-component-when-an-event-happens-in-current-compon
     @Output() public searchChanged: EventEmitter<any> = new EventEmitter();
+    @Output() public getFilterFlag: EventEmitter<any> = new EventEmitter();
 
     getFilterList(): AngularFireList<Post>{
         //filter the reference based on text
