@@ -1,11 +1,10 @@
 <div *ngIf="post">
     <mat-card (click)="postClicked()">
-        <p></p> {{testy}}
         <mat-card-subtitle></mat-card-subtitle> {{post.username}}
         <mat-card-title></mat-card-title> {{post.title}}
         <mat-card-content></mat-card-content> {{post.body}}
-        <colgroup *ngFor="let tag of tags" >
-            <mat-card-footer></mat-card-footer> {{tag}}
-        </colgroup>
+        <div *ngFor="let tag of tags">
+            <mat-card-subtitle></mat-card-subtitle> {{tag}}
+        </div>
     </mat-card>
 </div>

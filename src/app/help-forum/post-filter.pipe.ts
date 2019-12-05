@@ -7,7 +7,7 @@ import { Post } from '../help-forum/post';
 
 export class PostFilterPipe implements PipeTransform {
     transform(posts: any, searchText: string, filterFlag: number): any {
-        if(!posts || searchText.length<2 || searchText == ""){
+        if(!posts || !searchText || searchText.length < 2){
             return posts;
         }
         return posts.filter(post => 

@@ -1,20 +1,34 @@
 <h4>Help Forum</h4>
+
 <!--
-    post visuals
-    aka
-    the post
-    flag button-> brings up flag reason and flag button
+    Individual post
 -->
+<button class="btn btn-primary" (click)="backToFeed()" *ngIf="postClicked">Back</button>
 <div class="container" *ngIf="postClicked">
     <app-help-forum-post [post]='post'></app-help-forum-post>
-    <button class="btn btn-primary" (click)="FlagPost()">Flag</button>
+    <button class="btn btn-danger" (click)="flagPost()">Flag</button>
     <div *ngIf="postFlagged">
         <div class="form-group">
             <textarea id="body" required [(ngModel)]="reasonText" name="reason" placeholder="Reason for flagging post"></textarea>
         </div>
-        <button type="submit" class="btn btn-success" (click)="SubmitComplaint()">Submit</button>
+        <button type="submit" class="btn btn-success" (click)="submitComplaint()">Submit</button>
     </div>
+<div *ngFor="let comment of comments">
+    <mat-card>
+        <mat-card-subtitle></mat-card-subtitle> {{comment.username}}
+        <mat-card-content></mat-card-content> {{comment.body}}
+    </mat-card>
 </div>
+<div class="form-group">
+    <textarea id="body" required [(ngModel)]="commentBody" name="comment" placeholder="Enter comment"></textarea>
+</div>
+<button type="submit" class="btn btn-success" (click)="comment()">Comment</button>
+</div>
+
+<!--
+    Feed and request/provide help
+-->
+
 <div class="container" *ngIf="!postClicked">
     <div class="row">
         <app-help-forum-search></app-help-forum-search>

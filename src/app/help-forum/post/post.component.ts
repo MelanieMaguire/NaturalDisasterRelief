@@ -9,14 +9,12 @@ import { Post } from '../post';
 })
 export class PostComponent implements OnInit {
 
-  tags: any;
-  testy: string;
+  tags: string[];
   @Input() post: Post;
 
   constructor(private helpForumService: HelpForumService) { }
 
   ngOnInit() {
-    this.tags = this.post.tags;
   }
 
   updateActive(isActive: boolean) {
@@ -32,7 +30,7 @@ export class PostComponent implements OnInit {
   }
 
   postClicked(){
-    this.testy = "Clicked!"
+    this.helpForumService.postGet.emit(true);
     this.helpForumService.postClicked.emit(this.post);
   }
 

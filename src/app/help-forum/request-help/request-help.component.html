@@ -1,11 +1,37 @@
-<p>request-help works!</p>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="submitPost()">
     <div class="form-group">
         <input type="text" class="form-control" id="title" required [(ngModel)]="post.title" name="title" placeholder="Title">
     </div>
-
     <div class="form-group">
         <textarea id="body" required [(ngModel)]="post.body" name="body" placeholder="Body"></textarea>
     </div>
-    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+    <div class="form-group">
+            <input type="text" class="form-control" id="location" required [(ngModel)]="post.location" name="location" placeholder="City, State">
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" class="form-control" id="tempTag" [(ngModel)]="tempTag" name="tempTag" placeholder="tag">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-info" (click)="addTag()" >+</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button"  class="btn btn-secondary" (click)="removeTag()">-</button>
+            </div>
+        </div>
+        <p *ngIf="!tagsMade">No tags</p>
+        <div class="container" *ngIf="tagsMade">
+                <div class="col-md-3">
+                    <p>Tags:</p>
+                </div>
+                <div *ngFor="let tag of tags">
+                        <div class="col-md-4">
+                            <p>{{tag}}</p>
+                        </div>
+                </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <h6 *ngIf="incomplete">Form Incomplete</h6>
 </form>
