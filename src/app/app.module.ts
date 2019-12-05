@@ -24,7 +24,6 @@ import {FormsModule} from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -59,7 +58,6 @@ import { PostFilterPipe } from './help-forum/post-filter.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FormsModule,
     MatCardModule,
     MatRadioModule,
