@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
@@ -19,6 +20,7 @@ import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
+  { path: 'weather_alerts', component: WeatherAlertsComponent},
   { path: 'mia', component: MiaComponent },
   { path: 'help_forum', component: HelpForumComponent },
   { path: 'preparation_tips', component: PreparationTipsComponent },
