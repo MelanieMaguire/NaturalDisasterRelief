@@ -19,11 +19,10 @@ import { PostComponent } from './help-forum/post/post.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { environment} from '../environments/environment';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
@@ -48,12 +47,11 @@ import { LoginSuccessComponent } from './login/login-success/login-success.compo
     EntryListComponent,
     CreateEntryComponent,
     AccoutCreatedComponent,
-    LoginSuccessComponent,
+    LoginSuccessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for the database
