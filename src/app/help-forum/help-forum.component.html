@@ -13,16 +13,18 @@
         </div>
         <button type="submit" class="btn btn-success" (click)="submitComplaint()">Submit</button>
     </div>
-<div *ngFor="let comment of comments">
-    <mat-card>
-        <mat-card-subtitle></mat-card-subtitle> {{comment.username}}
-        <mat-card-content></mat-card-content> {{comment.body}}
-    </mat-card>
-</div>
-<div class="form-group">
-    <textarea id="body" required [(ngModel)]="commentBody" name="comment" placeholder="Enter comment"></textarea>
-</div>
-<button type="submit" class="btn btn-success" (click)="comment()">Comment</button>
+    <div *ngIf="areComments">
+        <div *ngFor="let comment of comments">
+            <mat-card>
+                <mat-card-subtitle></mat-card-subtitle> {{comment.username}}
+                <mat-card-content></mat-card-content> {{comment.body}}
+            </mat-card>
+        </div>
+    </div>
+    <div class="form-group">
+        <textarea id="commentText" required [(ngModel)]="commentText" name="comment" placeholder="Enter comment"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="comment()">Comment</button>
 </div>
 
 <!--
@@ -30,7 +32,7 @@
 -->
 
 <div class="container" *ngIf="!postClicked">
-    <div class="row">
+    <div class="row-md-12">
         <app-help-forum-search></app-help-forum-search>
     </div>
     <div class="row">

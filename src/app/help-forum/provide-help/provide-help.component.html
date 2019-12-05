@@ -1,5 +1,4 @@
-<p>provide-help works!</p>
-<li *ngFor="let item of tags">
-    <input type="checkbox" [(ngModel)]="item">{{item}}
-</li>
-<button type="submit" class="btn btn-success" (click)="onFilter()">Filter</button>
+<mat-radio-group class="example-radio-group">
+    <mat-radio-button value="1">Title</mat-radio-button>
+    <mat-radio-button value="2">Tag</mat-radio-button>
+</mat-radio-group>

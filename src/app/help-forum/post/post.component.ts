@@ -1,6 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { HelpForumService } from '../help-forum.service';
 import { Post } from '../post';
+import { Comment } from '../comment';
 
 @Component({
   selector: 'app-help-forum-post',
@@ -9,17 +10,24 @@ import { Post } from '../post';
 })
 export class PostComponent implements OnInit {
 
+  hasTags: boolean;
   tags: string[];
   @Input() post: Post;
 
   constructor(private helpForumService: HelpForumService) { }
 
   ngOnInit() {
+    if(this.post.tags == undefined){
+      this.hasTags = false;
+    } else {
+      this.hasTags = true;
+      this.tags = this.post.tags;
+    }
   }
 
-  updateActive(isActive: boolean) {
+  updateActive(commentsArray: Comment[]) {
     this.helpForumService
-      .updatePost(this.post.key, { active: isActive })
+      .updatePost(this.post.key, { comments: commentsArray })
       .catch(err => console.log(err));
   }
  

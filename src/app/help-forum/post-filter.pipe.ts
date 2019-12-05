@@ -10,6 +10,11 @@ export class PostFilterPipe implements PipeTransform {
         if(!posts || !searchText || searchText.length < 2){
             return posts;
         }
+        /*
+         return posts.filter(post => 
+            post.tags.indexOf(
+                searchText.toLowerCase()) !== -1);
+        */
         return posts.filter(post => 
             post.title.toLowerCase().indexOf(
                 searchText.toLowerCase()) !== -1);

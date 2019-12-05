@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatRadioModule} from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -62,6 +62,7 @@ import { PostFilterPipe } from './help-forum/post-filter.pipe';
     NgbModule,
     FormsModule,
     MatCardModule,
+    MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     NoopAnimationsModule // for the database
