@@ -12,7 +12,7 @@
         <div class="col">
             <div class="row" *ngIf="canSolve">
                 <button class="btn btn-warning" (click)="solved()">Mark solved</button>
-                    <div *ngIf="solvedClicked">
+                    <div *ngIf="solvedClicked" class="post-side-buttons">
                         <h6>Are you sure you wish to mark this request as solved?</h6>
                         <div class="row">
                             <div class="col-sm-2">
@@ -24,11 +24,12 @@
                         </div>
                     </div>
             </div>
-            <br>
+            <br *ngIf="canSolve">
             <div class="row">
                 <button class="btn btn-danger" (click)="flagPost()">Flag</button>
-                <div *ngIf="postFlagged">
-                    <br>
+            </div>
+            <div class="row">
+                <div *ngIf="postFlagged" class="post-side-buttons">
                     <div class="form-group">
                         <textarea id="body" required [(ngModel)]="reasonText" name="reason" placeholder="Reason for flagging post"></textarea>
                     </div>
