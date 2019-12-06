@@ -1,14 +1,23 @@
 <div *ngIf="post">
     <mat-card (click)="postClicked()">
-        <mat-card-subtitle></mat-card-subtitle> {{post.username}}
-        <mat-card-title></mat-card-title> {{post.title}}
-        <mat-card-content></mat-card-content> {{post.body}}
+        <div class="mat-username">
+            <mat-card-subtitle class="mat-card-subtitle"></mat-card-subtitle> {{post.username}}
+        </div>
+        <div class="mat-title">
+            <mat-card-title></mat-card-title> {{post.title}}
+        </div>
+        <div class="mat-body">
+            <mat-card-content></mat-card-content> {{post.body}}
+        </div>
         <div class="row">
             <div *ngFor="let tag of tags">
                 <div class="col">
+                    <div class="mat-tags">
                         <mat-card-subtitle></mat-card-subtitle> {{tag}}
+                    </div>  
                 </div>
             </div>
         </div>
     </mat-card>
+    <br>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HelpForumService } from './help-forum.service';
 import { Post } from './post';
 import { Comment } from './comment'
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-help-forum',
@@ -27,16 +28,21 @@ export class HelpForumComponent implements OnInit {
       this.post = data;
       if(this.post.comments == undefined){
         this.areComments = false;
+      } else {
+        this.areComments = true;
+        this.comments = this.post.comments;
       }
     });
   }
 
   ngOnInit() {
     this.postClicked = false;
+    this.postFlagged = false;
   }
 
   backToFeed(){
     this.postClicked = false;
+    this.postFlagged = false;
   }
 
   flagPost(){
@@ -48,7 +54,17 @@ export class HelpForumComponent implements OnInit {
   }
 
   submitComplaint(){ //user who made it, post key, flag reason,
-    this.postFlagged = false;
+    if(this.reasonText != undefined && this.reasonText.trim().length != 0) {
+      if(this.post.flagReasons == undefined){
+        this.post.flagReasons = [this.reasonText];
+      } else {
+        this.post.flagReasons.push(this.reasonText);
+      }
+      this.helpForumService
+      .updatePost(this.post.key, { flagReasons: this.post.flagReasons })
+      .catch(err => console.log(err));
+      this.postFlagged = false;
+    }
   }
 
   comment(){

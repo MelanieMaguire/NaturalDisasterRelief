@@ -9,4 +9,5 @@ export class Post { //followed https://grokonez.com/frontend/angular/angular-8/a
     comments: Comment[];
     tags: string[];
     location: string;
+    flagReasons: string[];
 }
