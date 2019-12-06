@@ -15,7 +15,10 @@ export class HelpForumComponent implements OnInit {
   commentText: string;
   postClicked: boolean;
   postFlagged: boolean;
+  canSolve: boolean;
+  solvedClicked: boolean;
   areComments: boolean;
+  currentUser: string;
   post: Post;
   tempComment: Comment;
   comments: Comment[];
@@ -32,17 +35,26 @@ export class HelpForumComponent implements OnInit {
         this.areComments = true;
         this.comments = this.post.comments;
       }
+      if(this.post.username == this.currentUser){
+        this.canSolve = true;
+      } else{
+        this.canSolve = false;
+      }
     });
   }
 
   ngOnInit() {
     this.postClicked = false;
     this.postFlagged = false;
+    this.canSolve = false;
+    this.currentUser = "ActualBaby";
   }
 
   backToFeed(){
     this.postClicked = false;
     this.postFlagged = false;
+    this.solvedClicked = false;
+    this.canSolve = false;
   }
 
   flagPost(){
@@ -65,6 +77,22 @@ export class HelpForumComponent implements OnInit {
       .catch(err => console.log(err));
       this.postFlagged = false;
     }
+  }
+
+  solved(){
+    if(this.solvedClicked){
+      this.solvedClicked = false;
+    }
+    else{
+      this.solvedClicked = true;
+    }
+  }
+
+  confirmSolved(){
+    this.helpForumService
+    .deletePost(this.post.key)
+    .catch(err => console.log(err));
+    this.postClicked = false;
   }
 
   comment(){

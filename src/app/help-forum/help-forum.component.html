@@ -10,13 +10,30 @@
                 <app-help-forum-post [post]='post'></app-help-forum-post>
         </div>
         <div class="col">
-            <button class="btn btn-danger" (click)="flagPost()">Flag</button>
-            <div *ngIf="postFlagged">
-                <br>
-                <div class="form-group">
-                    <textarea id="body" required [(ngModel)]="reasonText" name="reason" placeholder="Reason for flagging post"></textarea>
+            <div class="row" *ngIf="canSolve">
+                <button class="btn btn-warning" (click)="solved()">Mark solved</button>
+                    <div *ngIf="solvedClicked">
+                        <h6>Are you sure you wish to mark this request as solved?</h6>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <button class="btn btn-info" (click)="confirmSolved()">Yes</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-danger" (click)="solved()">No</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-danger" (click)="flagPost()">Flag</button>
+                <div *ngIf="postFlagged">
+                    <br>
+                    <div class="form-group">
+                        <textarea id="body" required [(ngModel)]="reasonText" name="reason" placeholder="Reason for flagging post"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" (click)="submitComplaint()">Submit</button>
                 </div>
-                <button type="submit" class="btn btn-success" (click)="submitComplaint()">Submit</button>
             </div>
         </div>
     </div>
