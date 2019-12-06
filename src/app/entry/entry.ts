@@ -11,5 +11,6 @@ export class Entry {
   location: string;
   contact: string;
   picture: string;
-
+  date: string;
+  info: string;
 }

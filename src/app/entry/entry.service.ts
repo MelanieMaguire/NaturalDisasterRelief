@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Entry } from './entry';
 
+
 @Injectable({
   providedIn: 'root'
 })

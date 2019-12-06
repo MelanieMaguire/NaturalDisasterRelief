@@ -28,7 +28,6 @@ import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PostFilterPipe } from './help-forum/post-filter.pipe';
 
 
@@ -62,8 +61,7 @@ import { PostFilterPipe } from './help-forum/post-filter.pipe';
     MatCardModule,
     MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    NoopAnimationsModule // for the database
+    AngularFireDatabaseModule, // for the database
   ],
   providers: [],
   bootstrap: [AppComponent]
