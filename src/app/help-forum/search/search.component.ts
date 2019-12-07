@@ -9,6 +9,7 @@ import { SearchService } from '../search.service';
 export class SearchComponent implements OnInit {
 
   searchText: string;
+  testSearch: string;
 
   constructor(private searchService: SearchService) { }
 
@@ -17,15 +18,8 @@ export class SearchComponent implements OnInit {
   }
 
   search(){
-    if(this.searchText == ""){
-      this.searchService.updateSearching(false, "");
-    }
-    else if(this.searchText.trim() == "" || this.searchText.length < 2 ){ //if text is whitespace or single char will return empty search result
-      this.searchService.updateSearching(true, "");
-    }
-    else{
-      this.searchService.updateSearching(true, this.searchText);
-    }
+    this.testSearch = this.searchText;
+      this.searchService.searchChanged.emit(this.searchText);
   }
 
 }

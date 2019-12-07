@@ -11,16 +11,25 @@ import { SearchService } from '../search.service';
 })
 export class FeedComponent implements OnInit {
 
+  filterFlag: number;
   posts: any;
   filteredPosts: any;
+  searchText: string;
 
   constructor(private helpForumService: HelpForumService,
     private searchService: SearchService) {
+      this.searchService.searchChanged.subscribe((data: string) => {
+        this.searchText = data;
+      });
+      this.searchService.getFilterFlag.subscribe((data: number) => {
+        this.filterFlag = data;
+      });
   }
 
   ngOnInit() {
     this.getPostsList();
     this.getFilterList();
+    this.filterFlag = 1;
   }
 
   getPostsList() {
@@ -32,22 +41,19 @@ export class FeedComponent implements OnInit {
       )
     ).subscribe(posts => {
       this.posts = posts;
-      this.filteredPosts = posts;
     });
   }
 
   getFilterList(){
-    if(this.searchService.getSearchString() != ""){
-      this.searchService.getFilterList().snapshotChanges().pipe(
-        map(changes =>
-          changes.map(c =>
-            ({ key: c.payload.key, ...c.payload.val() })
-          )
+    this.searchService.getFilterList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
         )
-      ).subscribe(posts => {
-        this.filteredPosts = posts;
-      });
-    }
+      )
+    ).subscribe(posts => {
+      this.filteredPosts = posts;
+    });
   }
  
   deletePosts() {

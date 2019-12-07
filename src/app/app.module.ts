@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,8 +25,11 @@ import { EntryDetailsComponent } from './entry/entry-details/entry-details.compo
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
 
-import { AccoutCreatedComponent } from './user/sign-up/accout-created/accout-created.component';
-import { LoginSuccessComponent } from './user/login/login-success/login-success.component';
+import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
+import { LoginSuccessComponent } from './login/login-success/login-success.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PostFilterPipe } from './help-forum/post-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -47,12 +51,15 @@ import { LoginSuccessComponent } from './user/login/login-success/login-success.
     EntryListComponent,
     CreateEntryComponent,
     AccoutCreatedComponent,
-    LoginSuccessComponent
+    LoginSuccessComponent,
+    PostFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatCardModule,
+    MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for the database
   ],

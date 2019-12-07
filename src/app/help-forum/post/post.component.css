@@ -1,0 +1,14 @@
+.mat-username {
+    color: grey;
+}
+
+.mat-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.mat-tags {
+    color: grey;
+    font-style: italic;
+    font-size: 15px;
+}

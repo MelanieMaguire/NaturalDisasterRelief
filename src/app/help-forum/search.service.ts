@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Post } from './post';
 
@@ -8,22 +8,15 @@ import { Post } from './post';
 export class SearchService {
     private dbPath = '/help-forum';
 
-    searchText: string;
-    searching: boolean=false;
     filteredRef: AngularFireList<Post> = null;
 
     constructor(private db: AngularFireDatabase) {
         this.filteredRef = db.list(this.dbPath);
     }
 
-    updateSearching(isSearch: boolean, text: string){
-        this.searching = isSearch;
-        this.searchText = text;
-    }
-    
-    getSearchString(): string{
-        return this.searchText;
-    }
+    //https://stackoverflow.com/questions/49008913/invoke-a-function-in-a-sibling-component-when-an-event-happens-in-current-compon
+    @Output() public searchChanged: EventEmitter<any> = new EventEmitter();
+    @Output() public getFilterFlag: EventEmitter<any> = new EventEmitter();
 
     getFilterList(): AngularFireList<Post>{
         //filter the reference based on text
