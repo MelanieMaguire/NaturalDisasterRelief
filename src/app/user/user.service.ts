@@ -22,22 +22,13 @@ export class UserService {
     this.userRef.push(user);
   }
 
-  /*checkCredentials(email: string, password: string): {
+  /*checkCredentials(email: string, password: string): void {
 
     // if both of these are true
 
-    this.userRef.child('user').orderByChild('email').equalTo(email) {
-      correctEmail = true;
-    }
-
-    this.userRef.child('user').orderByChild('password').equalTo(password).on("value", function(snapshot)) {
-      correctPassword = true;
-    }
-
-    if(correctEmail == correctPassword)
-      return true;
-      }*/
-
+  this.userRef.orderByChild("email").equalTo(this.email).on("child_added", function(snapshot) {
+    console.log(snapshot.key);
+  }
     // https://stackoverflow.com/questions/40471284/firebase-search-by-child-value
-
+  }*/
 }

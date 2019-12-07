@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.userService.checkCredentials(email, password);   // pass in email and password from form and check credentials
+  /*onSubmit() {
+    this.userService.checkCredentials(this.email, this.password);   // pass in email and password from form and check credentials
     this.submitted = true;
-  }
+  }*/
 }
