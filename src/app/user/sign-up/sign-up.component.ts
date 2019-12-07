@@ -20,13 +20,13 @@ export class SignUpComponent implements OnInit {
   }
 
   newUser(): void {
-        this.submitted = false;
-        this.user = new User();
+    this.submitted = false;
+    this.user = new User();
   }
 
   saveUser() {
-        this.userService.createUser(this.user);
-        this.user = new User();
+    this.userService.createUser(this.user);
+    this.user = new User();
   }
 
   onSubmit() {

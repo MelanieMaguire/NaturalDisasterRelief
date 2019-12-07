@@ -8,7 +8,7 @@
         <input type="text"
                class="form-control"
                id="firstName"
-               ngModel
+               [(ngModel)] = "user.firstName"
                name="firstName"
                required>
         <div class="invalid-feedback">
@@ -20,7 +20,7 @@
         <input type="text"
                class="form-control"
                id="lastName"
-               ngModel
+               [(ngModel)] = "user.lastName"
                name = "lastName"
                required>
         <div class="invalid-feedback">
@@ -35,7 +35,7 @@
              class="form-control"
              id="email"
              placeholder="you@example.com"
-             ngModel
+             [(ngModel)] = "user.email"
              name="email"
              required
              email>
@@ -50,7 +50,7 @@
              id="password"
              class="form-control"
              placeholder="Password"
-             ngModel
+             [(ngModel)] = "user.password"
              name = "password"
              required
              minlength="8">
@@ -62,7 +62,7 @@
              class="form-control"
              id="address"
              placeholder="Street Address"
-             ngModel
+             [(ngModel)] = "user.address"
              name="address"
              address>
     </div>
@@ -73,7 +73,7 @@
              class="form-control"
              id="city"
              placeholder="City"
-             ngModel
+             [(ngModel)] = "user.city"
              name="city">
     </div>
 
@@ -82,7 +82,7 @@
         <label for="country">Country</label>
         <select class="custom-select d-block w-100"
                 id="country"
-                ngModel
+                [(ngModel)] = "user.country"
                 name="country">
           <option value="">Choose...</option>
           <option>United States</option>
@@ -95,7 +95,7 @@
         <label for="state">State</label>
         <select class="custom-select d-block w-100"
                 id="state"
-                ngModel
+                [(ngModel)] = "user.state"
                 name="state">
           <option value="">Choose...</option>
           <option>Alabama</option>
@@ -164,7 +164,7 @@
         <input type="text"
                class="form-control"
                id="zip"
-               ngModel
+               [(ngModel)] = "user.zip"
                name="zip">
         <div class="invalid-feedback">
           Zip code required.
