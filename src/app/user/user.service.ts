@@ -10,6 +10,9 @@ import { User } from './user.model';
 export class UserService {
   private dbPath = '/user';
   userRef: AngularFireList<User> = null;
+  correctEmail = false;
+  correctPassword = false;
+
 
   constructor(private db: AngularFireDatabase) {
     this.userRef = db.list(this.dbPath);
@@ -19,14 +22,22 @@ export class UserService {
     this.userRef.push(user);
   }
 
-  checkCredentials(user): {
+  /*checkCredentials(email: string, password: string): {
 
     // if both of these are true
 
-    this.userRef.child('user').orderByChild('email').equalTo().on("value", function(snapshot)) {}  // supposed to return true if match
-    this.userRef.child('user').orderByChild('password').equalTo(form.value.password).on("value", function(snapshot)) {} // supposed to return true if match
+    this.userRef.child('user').orderByChild('email').equalTo(email) {
+      correctEmail = true;
+    }
+
+    this.userRef.child('user').orderByChild('password').equalTo(password).on("value", function(snapshot)) {
+      correctPassword = true;
+    }
+
+    if(correctEmail == correctPassword)
+      return true;
+      }*/
 
     // https://stackoverflow.com/questions/40471284/firebase-search-by-child-value
-    }
-  }
+
 }

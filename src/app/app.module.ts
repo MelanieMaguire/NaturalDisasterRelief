@@ -25,11 +25,12 @@ import { EntryDetailsComponent } from './entry/entry-details/entry-details.compo
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
 
-import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
-import { LoginSuccessComponent } from './login/login-success/login-success.component';
+import { AccoutCreatedComponent } from './user/sign-up/accout-created/accout-created.component';
+import { LoginSuccessComponent } from './user/login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PostFilterPipe } from './help-forum/post-filter.pipe';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { PostFilterPipe } from './help-forum/post-filter.pipe';
     MatCardModule,
     MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, // for the database
+    AngularFireDatabaseModule,
+    NoopAnimationsModule, // for the database
   ],
   providers: [],
   bootstrap: [AppComponent]
