@@ -79,7 +79,7 @@ export class RequestHelpComponent implements OnInit {
   }
  
   submitPost() {
-    if(this.loggedIn){
+    //if(this.loggedIn){
       if(this.post.title == undefined || this.post.body == undefined 
         || this.post.location == undefined || this.post.title.length < 0 
         || this.post.location.length < 0 || this.post.body.length < 0){
@@ -89,6 +89,6 @@ export class RequestHelpComponent implements OnInit {
         this.incomplete = false;
         this.save();
       }
-    }
+    //}
   }
 }
