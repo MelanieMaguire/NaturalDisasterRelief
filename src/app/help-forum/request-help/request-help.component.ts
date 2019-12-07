@@ -18,8 +18,19 @@ export class RequestHelpComponent implements OnInit {
   incomplete: boolean;
   clickSubmit: boolean;
   tagsMade: boolean;
+  loggedIn: boolean;
+  user: any;
 
-  constructor(private helpForumService: HelpForumService) { }
+  constructor(private helpForumService: HelpForumService) {
+      this.helpForumService.getLoggedInUser.subscribe((data: any) => {
+        this.user = data
+        if(this.user == undefined){
+          this.loggedIn = false;
+        } else {
+          this.loggedIn = true;
+        }
+      });
+   }
 
   ngOnInit() {
     this.incomplete = false;
@@ -31,7 +42,7 @@ export class RequestHelpComponent implements OnInit {
   }
  
   save() {
-    this.post.username = "ActualBaby";
+    //this.post.username = this.user.firstName+" "+this.user.lastName;
     if(this.tags == undefined){
       this.post.tags = [""];
     }
@@ -66,14 +77,16 @@ export class RequestHelpComponent implements OnInit {
   }
  
   submitPost() {
-    if(this.post.title == undefined || this.post.body == undefined 
-      || this.post.location == undefined || this.post.title.length < 0 
-      || this.post.location.length < 0 || this.post.body.length < 0){
-      this.incomplete = true;
-    }
-    else {
-      this.incomplete = false;
-      this.save();
+    if(this.loggedIn){
+      if(this.post.title == undefined || this.post.body == undefined 
+        || this.post.location == undefined || this.post.title.length < 0 
+        || this.post.location.length < 0 || this.post.body.length < 0){
+        this.incomplete = true;
+      }
+      else {
+        this.incomplete = false;
+        this.save();
+      }
     }
   }
 }

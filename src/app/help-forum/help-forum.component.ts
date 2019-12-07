@@ -4,6 +4,7 @@ import { Post } from './post';
 import { Comment } from './comment'
 import { post } from 'selenium-webdriver/http';
 
+
 @Component({
   selector: 'app-help-forum',
   templateUrl: './help-forum.component.html',
@@ -22,7 +23,7 @@ export class HelpForumComponent implements OnInit {
   post: Post;
   tempComment: Comment;
   comments: Comment[];
-  //user
+  user: any;
   private loadProvide=false;
   private loadRequest=false;
   
@@ -36,24 +37,25 @@ export class HelpForumComponent implements OnInit {
         this.areComments = true;
         this.comments = this.post.comments;
       }
-      if(this.post.username == this.currentUser){
-        this.canSolve = true;
-      } else{
-        this.canSolve = false;
-      }
     });
-    /*
-      this.helpForumService.getLoggedInUser.subscribe((data: User) => {
-        this.user = data
+      this.helpForumService.getLoggedInUser.subscribe((data: any) => {
+        this.user = data;
+        if(this.user == undefined){
+          this.canSolve = false;
+        } else {
+          if(this.post.username == this.user){
+            this.canSolve = true;
+          } else{
+            this.canSolve = false;
+          }
+        }
       });
-    */
   }
 
   ngOnInit() {
     this.postClicked = false;
     this.postFlagged = false;
     this.canSolve = false;
-    this.currentUser = "ActualBaby";
   }
 
   backToFeed(){

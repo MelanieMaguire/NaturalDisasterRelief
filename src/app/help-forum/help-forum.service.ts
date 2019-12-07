@@ -12,7 +12,7 @@ export class HelpForumService {
 
     constructor(private db: AngularFireDatabase) {
         this.postsRef = db.list(this.dbPath 
-        );//edit to order by timestamp
+        );
     }
 
     @Output() public postClicked: EventEmitter<any> = new EventEmitter();
