@@ -11,15 +11,16 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   submitted = false;
+  email = "";
+  password = "";
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {
-    this.userService.checkCredentials(form.value.email, form.value.password);   // pass in email and password from form and check credentials
-    submitted = true;
-  }
-
+  /*onSubmit() {
+    this.userService.checkCredentials(this.email, this.password);   // pass in email and password from form and check credentials
+    this.submitted = true;
+  }*/
 }

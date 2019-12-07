@@ -11,7 +11,7 @@
                id="inputEmail"
                class="form-control"
                placeholder="Email address"
-               ngModel
+               [(ngModel)] = "email"
                name = "email"
                required
                autofocus>
@@ -24,7 +24,7 @@
           id="inputPassword"
           class="form-control"
           placeholder="Password"
-          ngModel
+          [(ngModel)] = "password"
           name = "password"
           required>
       </div>
