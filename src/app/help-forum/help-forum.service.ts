@@ -17,6 +17,7 @@ export class HelpForumService {
 
     @Output() public postClicked: EventEmitter<any> = new EventEmitter();
     @Output() public postGet: EventEmitter<any> = new EventEmitter();
+    @Output() public getLoggedInUser: EventEmitter<any> = new EventEmitter();
 
     createPost(post: Post): void {
         this.postsRef.push(post);

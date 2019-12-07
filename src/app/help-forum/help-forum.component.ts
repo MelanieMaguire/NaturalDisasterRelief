@@ -22,6 +22,7 @@ export class HelpForumComponent implements OnInit {
   post: Post;
   tempComment: Comment;
   comments: Comment[];
+  //user
   private loadProvide=false;
   private loadRequest=false;
   
@@ -41,6 +42,11 @@ export class HelpForumComponent implements OnInit {
         this.canSolve = false;
       }
     });
+    /*
+      this.helpForumService.getLoggedInUser.subscribe((data: User) => {
+        this.user = data
+      });
+    */
   }
 
   ngOnInit() {

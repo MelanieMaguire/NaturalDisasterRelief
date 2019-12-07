@@ -4,6 +4,7 @@ export class Post { //followed https://grokonez.com/frontend/angular/angular-8/a
     //fr firebase implementation
     key: string;
     username: string;
+    creator: string;
     title: string;
     body: string;
     comments: Comment[];
