@@ -37,6 +37,9 @@ export class HelpForumComponent implements OnInit {
         this.areComments = true;
         this.comments = this.post.comments;
       }
+      if(this.post.username == "ActualBaby"){
+        this.canSolve = true;
+      }
     });
     /*
       this.helpForumService.getLoggedInUser.subscribe((data: any) => {
