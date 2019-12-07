@@ -10,8 +10,8 @@ import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
 import { FindShelterComponent } from './find-shelter/find-shelter.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './user/login/login.component';
+import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { FeedComponent } from './help-forum/feed/feed.component';
 import { SearchComponent } from './help-forum/search/search.component';
 import { RequestHelpComponent } from './help-forum/request-help/request-help.component';
@@ -24,12 +24,12 @@ import { FormsModule } from '@angular/forms';
 import { EntryDetailsComponent } from './entry/entry-details/entry-details.component';
 import { EntryListComponent } from './entry/entry-list/entry-list.component';
 import { CreateEntryComponent } from './entry/create-entry/create-entry.component';
+
 import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
 import { LoginSuccessComponent } from './login/login-success/login-success.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PostFilterPipe } from './help-forum/post-filter.pipe';
-
 
 @NgModule({
   declarations: [
