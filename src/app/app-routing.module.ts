@@ -12,10 +12,10 @@ import { MiaComponent } from './mia/mia.component';
 import { HelpForumComponent } from './help-forum/help-forum.component';
 import { PreparationTipsComponent } from './preparation-tips/preparation-tips.component';
 import { FindShelterComponent } from './find-shelter/find-shelter.component';
-import { LoginComponent } from './login/login.component';
-import { LoginSuccessComponent } from './login/login-success/login-success.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { AccoutCreatedComponent } from './sign-up/accout-created/accout-created.component';
+import { LoginComponent } from './user/login/login.component';
+import { LoginSuccessComponent } from './user/login/login-success/login-success.component';
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { AccoutCreatedComponent } from './user/sign-up/accout-created/accout-created.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
