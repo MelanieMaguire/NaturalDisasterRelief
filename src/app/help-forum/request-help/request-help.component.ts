@@ -22,6 +22,7 @@ export class RequestHelpComponent implements OnInit {
   user: any;
 
   constructor(private helpForumService: HelpForumService) {
+    /*
       this.helpForumService.getLoggedInUser.subscribe((data: any) => {
         this.user = data
         if(this.user == undefined){
@@ -29,7 +30,7 @@ export class RequestHelpComponent implements OnInit {
         } else {
           this.loggedIn = true;
         }
-      });
+      }); */
    }
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class RequestHelpComponent implements OnInit {
  
   save() {
     //this.post.username = this.user.firstName+" "+this.user.lastName;
+    this.post.username = "defaultUser";
     if(this.tags == undefined){
       this.post.tags = [""];
     }

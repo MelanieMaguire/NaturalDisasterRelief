@@ -38,6 +38,7 @@ export class HelpForumComponent implements OnInit {
         this.comments = this.post.comments;
       }
     });
+    /*
       this.helpForumService.getLoggedInUser.subscribe((data: any) => {
         this.user = data;
         if(this.user == undefined){
@@ -49,7 +50,7 @@ export class HelpForumComponent implements OnInit {
             this.canSolve = false;
           }
         }
-      });
+      });*/
   }
 
   ngOnInit() {
